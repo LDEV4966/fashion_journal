@@ -1,0 +1,71 @@
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  height: 100%;
+  margin-top: 100px;
+}
+
+#container {
+  width: 480px;
+  font-size: 0.9rem;
+  margin-left: 3rem;
+  float: left;
+
+  /* background-color: #0093e9;
+        background-image: linear-gradient(160deg, #0093e9 0%, #80d0c7 100%); */
+}
+#weekDic {
+  font-size: 0.8rem;
+}
+.day {
+  width: 11%;
+  height: 80px;
+  display: inline-block;
+  padding: 5px;
+}
+.today {
+  border: 1px solid rgb(10, 0, 0);
+}
+.dic {
+  display: inline-block;
+  width: 11%;
+  padding: 5px;
+}
+#controller {
+  margin-top: 15rem;
+}
+#controller h3 {
+  margin-bottom: -10px;
+}
+#controller .btn div {
+  display: inline;
+}
+#controller .btn img {
+  width: 2rem;
+  height: 2rem;
+  filter: invert(85%);
+  transition: 0.3s;
+}
+#controller .btn img:hover {
+  transform: scale(1.1);
+  filter: invert(100%);
+}
+#year {
+  font-size: 1.7rem;
+  display: inline;
+}
+#bar {
+  font-size: 1.7rem;
+  display: inline;
+}
+#month {
+  font-size: 2rem;
+  display: inline;
+}
+#this-day {
+  font-size: 6rem;
+}
+#date {
+  font-size: 3rem;
+}
