@@ -122,10 +122,10 @@ const Calender = () => {
         <div id="date">{getWeekDic2(date)}</div>
         <div className="btn">
           <div onClick={leftHandleWeek}>
-            <div>left</div>
+            <i class="fas fa-arrow-circle-left"></i>
           </div>
           <div onClick={rightHandleWeek}>
-            <div>right</div>
+            <i class="fas fa-arrow-circle-right"></i>
           </div>
         </div>
       </div>
