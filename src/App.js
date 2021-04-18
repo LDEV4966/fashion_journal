@@ -1,12 +1,8 @@
 import "./App.css";
-import Calender from "./Calender/Calender";
 
+import AppRouter from "./Componets/Router";
 function App() {
-  return (
-    <div className="App">
-      <Calender />
-    </div>
-  );
+  return <AppRouter />;
 }
 
 export default App;
