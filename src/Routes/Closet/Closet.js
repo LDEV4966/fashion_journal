@@ -1,10 +1,12 @@
 import React from "react";
 import "./Closet.css";
+import DressInfo from "../../Componets/DressInfo/DressInfo";
 
 const Closet = () => {
   return (
     <>
-      <div>CLoset</div>
+      <div id="closet-screen"s>My DressRoom</div>
+      <DressInfo />
     </>
   );
 };

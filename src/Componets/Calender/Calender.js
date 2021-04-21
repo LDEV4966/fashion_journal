@@ -106,7 +106,8 @@ const Calender = () => {
                   "day" +
                   (day === today.getDate() && month === today.getMonth() + 1
                     ? " today"
-                    : "")
+                    : "") +
+                  (day !== "." ? " num" : " dot")
                 }
                 key={index}
               >
@@ -122,10 +123,10 @@ const Calender = () => {
         <div id="date">{getWeekDic2(date)}</div>
         <div className="btn">
           <div onClick={leftHandleWeek}>
-            <i class="fas fa-arrow-circle-left"></i>
+            <i className="fas fa-arrow-circle-left"></i>
           </div>
           <div onClick={rightHandleWeek}>
-            <i class="fas fa-arrow-circle-right"></i>
+            <i className="fas fa-arrow-circle-right"></i>
           </div>
         </div>
       </div>

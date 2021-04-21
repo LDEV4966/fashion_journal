@@ -1,0 +1,49 @@
+.dressInfoRow-inner {
+  display: flex;
+  flex-direction: column;
+  padding-bottom: 30px;
+}
+.slider-container {
+  display: flex;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  justify-content: flex-start;
+  border-bottom: 0.1px solid rgb(255, 250, 250, 0.5);
+}
+.dressSort {
+  margin-left: 3vw;
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+.slick-slider {
+  display: flex;
+  padding: 20px;
+  justify-content: center;
+  width: 100%;
+  margin-bottom: 20px;
+}
+.slick-list {
+  width: fit-content;
+}
+.slick-arrow {
+  opacity: 0.5;
+  transform: scale(1.6);
+}
+.slick-arrow:hover {
+  opacity: 1;
+}
+
+.dressImg-list_thumb_img {
+  max-width: 220px;
+  min-width: 220px;
+  height: 240px;
+  border-radius: 8px;
+  box-shadow: rgb(175, 174, 174) 0.2px 0.2px 0.2px 0.2px;
+  will-change: transform;
+  cursor: pointer;
+}
+.dressImg-list_thumb_img:hover {
+  transform: scale(0.94);
+  transition: all ease 0.4s;
+}

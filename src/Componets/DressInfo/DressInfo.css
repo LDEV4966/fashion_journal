@@ -1,9 +1,14 @@
-#main-screen {
+#dressInfo-screen {
   padding-top: 10vh;
-  height: 100vh;
   background-position: right;
+  color: aliceblue;
   background-repeat: repeat;
-  opacity: 1;
   padding-left: 10%;
   padding-right: 10%;
+  opacity: 1;
+}
+
+.dressInfo-container {
+  display: flex;
+  justify-content: center;
 }
