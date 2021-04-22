@@ -8,7 +8,7 @@
   padding-left: 5vw;
   padding-right: 5vw;
   justify-content: flex-start;
-  border-bottom: 0.1px solid rgb(255, 250, 250, 0.5);
+  border-bottom: 0.15px solid rgb(255, 250, 250, 0.6);
 }
 .dressSort {
   margin-left: 3vw;
@@ -27,11 +27,29 @@
   width: fit-content;
 }
 .slick-arrow {
-  opacity: 0.5;
+  opacity: 0.6;
   transform: scale(1.6);
 }
 .slick-arrow:hover {
   opacity: 1;
+}
+.slick-dots {
+  margin-bottom: 10px;
+}
+.slick-dots > li {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 50%;
+  width: fit-content;
+  height: fit-content;
+  opacity: 0.6;
+  transform: scale(0.65);
+}
+.slick-dots .slick-active {
+  opacity: 0.85;
 }
 
 .dressImg-list_thumb_img {

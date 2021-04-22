@@ -40,6 +40,7 @@
 }
 
 .navigation__list a {
+  display: inline-block;
   text-decoration: none;
   font-size: 20px;
   color: rgb(68, 67, 67);

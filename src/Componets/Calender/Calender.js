@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Calender.css";
+import SideBar from "../SideBar/SideBar";
 const Calender = () => {
   let today = new Date();
   const [thisDay, setThisDay] = useState(today.getDate());
@@ -8,6 +9,7 @@ const Calender = () => {
   const [date, setDate] = useState(today.getDay());
   const [cal, setCal] = useState([]);
 
+  const [isSideBar, setIsSideBar] = useState(false);
   const calDic = {
     1: 31,
     2: 28,
@@ -77,60 +79,86 @@ const Calender = () => {
     return weekDic2[d];
   };
 
+  const dayOnClick = (e) => {
+    console.log(year, month, parseInt(e.target.innerText));
+    const className = e.target.className;
+    const arr = className.split(" ");
+    for (var i in arr) {
+      // dot 클릭시 sidebar 실행 x
+      if (arr[i] === "dot") {
+        return;
+      }
+    }
+    setIsSideBar(true);
+  };
+
   useEffect(() => {
     makeCalendar();
     return () => {};
   }, [year, month]);
 
   return (
-    <div className="calender">
-      <div id="container">
-        <h2>Day info</h2>
-        <div id="year">{year}</div>
-        <span id="bar">/</span>
-        <div id="month">{month}</div>
-        <div id="weekDic">
-          {weekDic.map((dic, index) => {
-            return (
-              <div className="dic" id={dic} key={index}>
-                {dic}
+    <>
+      <SideBar setIsSideBar={setIsSideBar} isSideBar={isSideBar} />
+      <div
+        className={
+          "calender" +
+          (isSideBar === true ? " active-side" : " non-active-side")
+        }
+      >
+        <div id="container">
+          <h2>Day info</h2>
+          <div className="year-month-container">
+            <div>
+              <div id="year">{year}</div>
+              <span id="bar">/</span>
+              <div id="month">{month}</div>
+            </div>
+            <div className="btn">
+              <div onClick={leftHandleWeek}>
+                <i className="fas fa-arrow-circle-left"></i>
               </div>
-            );
-          })}
+              <div onClick={rightHandleWeek}>
+                <i className="fas fa-arrow-circle-right"></i>
+              </div>
+            </div>
+          </div>
+          <div id="weekDic">
+            {weekDic.map((dic, index) => {
+              return (
+                <div className="dic" id={dic} key={index}>
+                  {dic}
+                </div>
+              );
+            })}
+          </div>
+          <div id="calenda">
+            {cal.map((day, index) => {
+              return (
+                <div
+                  className={
+                    "day" +
+                    (day === today.getDate() && month === today.getMonth() + 1
+                      ? " today"
+                      : "") +
+                    (day !== "." ? " day-num" : " dot")
+                  }
+                  key={index}
+                  onClick={dayOnClick}
+                >
+                  {day}
+                </div>
+              );
+            })}
+          </div>
         </div>
-        <div id="calenda">
-          {cal.map((day, index) => {
-            return (
-              <div
-                className={
-                  "day" +
-                  (day === today.getDate() && month === today.getMonth() + 1
-                    ? " today"
-                    : "") +
-                  (day !== "." ? " num" : " dot")
-                }
-                key={index}
-              >
-                {day}
-              </div>
-            );
-          })}
+        <div id="controller">
+          <h3>Today is ...</h3>
+          <div id="this-day">{thisDay}</div>
+          <div id="date">{getWeekDic2(date)}</div>
         </div>
       </div>
-      <div id="controller">
-        <h3>Today is ...</h3>
-        <div id="this-day">{thisDay}</div>
-        <div id="date">{getWeekDic2(date)}</div>
-        <div className="btn">
-          <div onClick={leftHandleWeek}>
-            <i className="fas fa-arrow-circle-left"></i>
-          </div>
-          <div onClick={rightHandleWeek}>
-            <i className="fas fa-arrow-circle-right"></i>
-          </div>
-        </div>
-      </div>
-    </div>
+    </>
   );
 };
 

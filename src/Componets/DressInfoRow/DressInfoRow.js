@@ -1,11 +1,10 @@
 import React from "react";
 import "./DressInfoRow.css";
 import Slider from "react-slick";
-import styled from "styled-components";
 
 const DressInfoRow = ({ dressImgList, sort }) => {
   var settings = {
-    dots: false,
+    dots: true,
     arrow: false,
     infinite: true,
     speed: 600,

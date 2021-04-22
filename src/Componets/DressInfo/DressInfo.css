@@ -3,8 +3,8 @@
   background-position: right;
   color: aliceblue;
   background-repeat: repeat;
-  padding-left: 10%;
-  padding-right: 10%;
+  padding-left: 10vw;
+  padding-right: 10vw;
   opacity: 1;
 }
 
@@ -12,3 +12,4 @@
   display: flex;
   justify-content: center;
 }
+
