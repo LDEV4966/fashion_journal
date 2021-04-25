@@ -13,6 +13,9 @@ const Navigation = () => {
         <li className="navigation__list">
           <Link to="/closet">Closet</Link>
         </li>
+        <li className="navigation__list">
+          <Link to="/todayslook">Today's Look</Link>
+        </li>
       </ul>
     </nav>
   );
