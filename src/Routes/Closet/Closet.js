@@ -5,7 +5,7 @@ import DressInfo from "../../Componets/DressInfo/DressInfo";
 const Closet = () => {
   return (
     <>
-      <div id="closet-screen"s>My DressRoom</div>
+      <div id="closet-screen">My DressRoom</div>
       <DressInfo />
     </>
   );

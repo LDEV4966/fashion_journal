@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import "./Calender.css";
+import Clothes from "../Clothes/Clothes";
 import SideBar from "../SideBar/SideBar";
 const Calender = () => {
   let today = new Date();
-  const [thisDay, setThisDay] = useState(today.getDate());
+  const [date, setDate] = useState(today.getDate());
   const [year, setYear] = useState(today.getFullYear());
   const [month, setMonth] = useState(today.getMonth() + 1);
-  const [date, setDate] = useState(today.getDay());
+  const [thisDay, setThisDay] = useState(today.getDay());
   const [cal, setCal] = useState([]);
-
+  const [randomClothes, setRandomClothes] = useState([]);
+  const [toggleCalChange, setToggleCalCahnge] = useState(true);
   const [isSideBar, setIsSideBar] = useState(false);
+  const [clickDay, setClickDay] = useState();
+
   const calDic = {
     1: 31,
     2: 28,
@@ -34,7 +38,31 @@ const Calender = () => {
     "FRIDAY",
     "SATDAY",
   ];
-
+  let randomClothesArr = [];
+  const makeRandomClothes = (len) => {
+    randomClothesArr = [];
+    setRandomClothes([]);
+    const objKeys = Object.keys(Clothes);
+    if (year > today.getFullYear() || month > today.getMonth() + 1) {
+      ///  이거 수정 필요 달이 더큰거만 따지면 안됨
+      return;
+    }
+    if (month === parseInt(today.getMonth() + 1)) {
+      len = parseInt(today.getDate());
+    }
+    for (let i = 0; i <= len; i++) {
+      let randomClothes = {};
+      for (let j = 0; j < objKeys.length; j++) {
+        let sort = objKeys[j];
+        let sortLen = Clothes[`${sort}`].length;
+        let randomNum = parseInt(Math.random() * sortLen);
+        randomClothes[`${sort}`] = Clothes[`${sort}`][randomNum];
+      }
+      randomClothesArr.push(randomClothes);
+    }
+    setRandomClothes((prev) => [...prev, ...randomClothesArr]);
+    // console.log(randomClothesArr, randomClothes);
+  };
   const leftHandleWeek = () => {
     if (month === 1) {
       setMonth((prev) => 13 - prev);
@@ -56,6 +84,7 @@ const Calender = () => {
     return fistDayIndex;
   };
   const makeCalendar = () => {
+    setClickDay();
     setCal([]);
     let arr = [];
     let fistDayIndex = getFirstDayIndex();
@@ -74,13 +103,18 @@ const Calender = () => {
       arr.push(i);
     }
     setCal((prev) => [...prev, ...arr]);
+    setToggleCalCahnge((prev) => !prev);
   };
   const getWeekDic2 = (d) => {
     return weekDic2[d];
   };
 
   const dayOnClick = (e) => {
-    console.log(year, month, parseInt(e.target.innerText));
+    if (isSideBar === true) {
+      return;
+    }
+
+    let parsedInt_clickDay = parseInt(e.target.innerText);
     const className = e.target.className;
     const arr = className.split(" ");
     for (var i in arr) {
@@ -89,7 +123,10 @@ const Calender = () => {
         return;
       }
     }
-    setIsSideBar(true);
+    if (randomClothes[parsedInt_clickDay]) {
+      setIsSideBar(true);
+      setClickDay(parsedInt_clickDay);
+    }
   };
 
   useEffect(() => {
@@ -97,9 +134,17 @@ const Calender = () => {
     return () => {};
   }, [year, month]);
 
+  useEffect(() => {
+    makeRandomClothes(cal.length - getFirstDayIndex());
+  }, [toggleCalChange]);
+
   return (
     <>
-      <SideBar setIsSideBar={setIsSideBar} isSideBar={isSideBar} />
+      <SideBar
+        setIsSideBar={setIsSideBar}
+        isSideBar={isSideBar}
+        dayLook={randomClothes[clickDay]}
+      />
       <div
         className={
           "calender" +
@@ -154,8 +199,8 @@ const Calender = () => {
         </div>
         <div id="controller">
           <h3>Today is ...</h3>
-          <div id="this-day">{thisDay}</div>
-          <div id="date">{getWeekDic2(date)}</div>
+          <div id="this-day">{date}</div>
+          <div id="date">{getWeekDic2(thisDay)}</div>
         </div>
       </div>
     </>

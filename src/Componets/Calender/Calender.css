@@ -9,7 +9,6 @@
 #container {
   width: 480px;
   font-size: 0.9rem;
-  margin-left: 3rem;
   float: left;
 }
 #container > h2 {
@@ -22,7 +21,7 @@
 }
 .day {
   width: 11%;
-  height: 80px;
+  height: 65px;
   display: inline-block;
   padding: 5px;
 }
@@ -104,7 +103,7 @@
   display: inline;
 }
 #this-day {
-  font-size: 4rem;
+  font-size: 6rem;
 }
 #date {
   font-size: 2rem;

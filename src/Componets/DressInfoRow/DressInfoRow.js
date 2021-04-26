@@ -23,6 +23,7 @@ const DressInfoRow = ({ dressImgList, sort }) => {
                 className="dressImg-list_thumb_img"
                 src={dressImg}
                 alt={sort}
+                key={dressImg}
               />
             );
           })}

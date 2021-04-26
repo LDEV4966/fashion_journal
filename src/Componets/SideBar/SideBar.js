@@ -1,7 +1,6 @@
 import React from "react";
 import "./SideBar.css";
-import backgroundImage from "../../Background/bg13.jpeg";
-const SideBar = ({ setIsSideBar, isSideBar }) => {
+const SideBar = ({ setIsSideBar, isSideBar, dayLook }) => {
   const closeOnClick = () => {
     setIsSideBar(false);
   };
@@ -9,16 +8,26 @@ const SideBar = ({ setIsSideBar, isSideBar }) => {
     <div
       className={"sidebar" + (isSideBar === true ? " active" : " non-active")}
       id="sidebar-screen"
-      style={{
-        backgroundImage: `url(${backgroundImage})`,
-      }}
     >
       {isSideBar && (
         <div className="sidebar-container">
           <div className="close-btn" onClick={closeOnClick}>
-            <i class="fas fa-caret-right"></i>
+            <i className="fas fa-caret-right"></i>
           </div>
-          <div className="box"></div>
+          {dayLook && (
+            <div className="daylook-container">
+              {Object.keys(dayLook).map((sort, index) => {
+                return (
+                  <div
+                    className={"daylook-container_col " + `${sort}`}
+                    key={`${sort}` + { index }}
+                  >
+                    <img className="daylook_img" src={dayLook[`${sort}`]} />
+                  </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       )}
     </div>
