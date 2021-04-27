@@ -43,12 +43,18 @@ const Calender = () => {
     randomClothesArr = [];
     setRandomClothes([]);
     const objKeys = Object.keys(Clothes);
-    if (year > today.getFullYear() || month > today.getMonth() + 1) {
+    if (year > today.getFullYear()) {
       ///  이거 수정 필요 달이 더큰거만 따지면 안됨
       return;
     }
-    if (month === parseInt(today.getMonth() + 1)) {
-      len = parseInt(today.getDate());
+    if (year === today.getFullYear() && month > today.getMonth() + 1) {
+      return;
+    }
+    if (
+      month === parseInt(today.getMonth() + 1) &&
+      year === today.getFullYear()
+    ) {
+      len = parseInt(today.getDate()) - 1;
     }
     for (let i = 0; i <= len; i++) {
       let randomClothes = {};
@@ -123,7 +129,12 @@ const Calender = () => {
         return;
       }
     }
-    if (randomClothes[parsedInt_clickDay]) {
+    if (
+      randomClothes[parsedInt_clickDay] ||
+      (today.getFullYear() >= year &&
+        today.getMonth() + 1 >= month &&
+        parsedInt_clickDay <= date)
+    ) {
       setIsSideBar(true);
       setClickDay(parsedInt_clickDay);
     }
@@ -192,6 +203,12 @@ const Calender = () => {
                   onClick={dayOnClick}
                 >
                   {day}
+                  {randomClothes.length > day ? (
+                    <i
+                      className="fas fa-check checked"
+                      onClick={dayOnClick}
+                    ></i>
+                  ) : undefined}
                 </div>
               );
             })}

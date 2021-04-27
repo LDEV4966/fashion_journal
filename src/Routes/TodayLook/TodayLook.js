@@ -23,7 +23,7 @@ const TodayLook = () => {
     slidesToScroll: 1,
     // 자동 넘김을 할 것인가. 한다면 스피드는?
     autoplay: true,
-    autoplaySpeed: 2000,
+    autoplaySpeed: 2300,
     // 화면에 올리면 슬라이더가 자동으로 넘어가지 않음
     pauseOnHover: false,
     // 슬라이더를 넘기지 않고 fade in/out 하는 식으로 트랜지션 됨

@@ -11,6 +11,11 @@ const SideBar = ({ setIsSideBar, isSideBar, dayLook }) => {
     >
       {isSideBar && (
         <div className="sidebar-container">
+          <div className="sidebar-menu">
+            <i class="far fa-plus-square"></i>
+            <i class="far fa-trash-alt"></i>
+            <i class="fas fa-redo"></i>
+          </div>
           <div className="close-btn" onClick={closeOnClick}>
             <i className="fas fa-caret-right"></i>
           </div>
