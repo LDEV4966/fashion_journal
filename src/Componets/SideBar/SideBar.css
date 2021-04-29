@@ -89,9 +89,9 @@
 .sidebar-menu {
   position: absolute;
   right: 0;
-  top: 8.2vh;
+  top: 8.5vh;
   width: 35vw;
-  height: 6vh;
+  height: 8vh;
   background-color: rgb(240, 248, 255, 0.5);
   display: flex;
   justify-content: flex-end;

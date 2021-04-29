@@ -3,6 +3,7 @@ import DressInfoRow from "../DressInfoRow/DressInfoRow";
 import Clothes from "../Clothes/Clothes";
 import "./DressInfo.css";
 import backgroundImage from "../../Background/bg9.jpeg";
+import Swal from "sweetalert2";
 const DressInfo = () => {
   const dressImgKeys = Object.keys(Clothes);
   return (
@@ -12,6 +13,9 @@ const DressInfo = () => {
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
+      <div>
+        
+      </div>
       <div>
         {dressImgKeys.map((sort, index) => {
           return (

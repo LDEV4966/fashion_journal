@@ -80,6 +80,7 @@ const TodayLook = () => {
               })}
             </Slider>
           </div>
+
         </div>
       </section>
     </div>

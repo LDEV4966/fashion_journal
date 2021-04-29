@@ -1,8 +1,17 @@
 import React from "react";
 import "./SideBar.css";
+import Swal from "sweetalert2";
+
 const SideBar = ({ setIsSideBar, isSideBar, dayLook }) => {
   const closeOnClick = () => {
     setIsSideBar(false);
+  };
+  const menuOnclick = () => {
+    Swal.fire({
+      title: `DB를 구축 하지 않았습니다`,
+      confirmButtonColor: "#615f5f",
+      confirmButtonText: `확인`,
+    });
   };
   return (
     <div
@@ -12,9 +21,9 @@ const SideBar = ({ setIsSideBar, isSideBar, dayLook }) => {
       {isSideBar && (
         <div className="sidebar-container">
           <div className="sidebar-menu">
-            <i class="far fa-plus-square"></i>
-            <i class="far fa-trash-alt"></i>
-            <i class="fas fa-redo"></i>
+            <i className="far fa-plus-square" onClick={menuOnclick}></i>
+            <i className="far fa-trash-alt" onClick={menuOnclick}></i>
+            <i className="fas fa-redo" onClick={menuOnclick}></i>
           </div>
           <div className="close-btn" onClick={closeOnClick}>
             <i className="fas fa-caret-right"></i>
