@@ -5,10 +5,9 @@
 }
 .close-btn > i {
   color: white;
-  transform: scale(5);
+  font-size: 80px;
   cursor: pointer;
   opacity: 0.7;
-  will-change: transform;
 }
 .close-btn > i:hover {
   opacity: 1;
