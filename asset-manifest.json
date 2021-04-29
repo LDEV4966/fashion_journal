@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/fashion_journal/static/css/main.5b833dc2.chunk.css",
+    "main.css": "/fashion_journal/static/css/main.57203411.chunk.css",
     "main.js": "/fashion_journal/static/js/main.8fdf550a.chunk.js",
     "main.js.map": "/fashion_journal/static/js/main.8fdf550a.chunk.js.map",
     "runtime-main.js": "/fashion_journal/static/js/runtime-main.b476fe11.js",
@@ -8,7 +8,7 @@
     "static/js/2.776be38c.chunk.js": "/fashion_journal/static/js/2.776be38c.chunk.js",
     "static/js/2.776be38c.chunk.js.map": "/fashion_journal/static/js/2.776be38c.chunk.js.map",
     "index.html": "/fashion_journal/index.html",
-    "static/css/main.5b833dc2.chunk.css.map": "/fashion_journal/static/css/main.5b833dc2.chunk.css.map",
+    "static/css/main.57203411.chunk.css.map": "/fashion_journal/static/css/main.57203411.chunk.css.map",
     "static/js/2.776be38c.chunk.js.LICENSE.txt": "/fashion_journal/static/js/2.776be38c.chunk.js.LICENSE.txt",
     "static/media/2.3ba1e303.jpg": "/fashion_journal/static/media/2.3ba1e303.jpg",
     "static/media/3.3a2078ed.jpg": "/fashion_journal/static/media/3.3a2078ed.jpg",
@@ -47,7 +47,7 @@
   "entrypoints": [
     "static/js/runtime-main.b476fe11.js",
     "static/js/2.776be38c.chunk.js",
-    "static/css/main.5b833dc2.chunk.css",
+    "static/css/main.57203411.chunk.css",
     "static/js/main.8fdf550a.chunk.js"
   ]
 }
