@@ -6,7 +6,7 @@ function App() {
     <>
       <div id="screen-size">
         <p>Screen size is not suitable</p>
-        <p> width > 1200px and height > 800px</p>
+        <p> (width > 1300px) and (height > 800px)</p>
       </div>
       <AppRouter />
     </>
