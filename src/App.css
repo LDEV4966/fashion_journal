@@ -16,12 +16,12 @@
   box-sizing: border-box;
   font-weight: 600;
 }
-@media screen and (max-width: 1300px) {
+@media screen and (max-width: 1200px) {
   #screen-size {
     display: flex;
   }
 }
-@media screen and (max-height: 800px) {
+@media screen and (max-height: 700px) {
   #screen-size {
     display: flex;
   }
