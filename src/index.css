@@ -1,9 +1,3 @@
-@font-face {
-  font-family: "PetitFormalScript-Regular";
-  src: local("PetitFormalScript-Regular"),
-    url("./Fonts/PetitFormalScript-Regular.ttf") format("truetype");
-  font-weight: normal;
-}
 html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
