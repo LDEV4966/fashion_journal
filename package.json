@@ -42,5 +42,17 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://leeseungmin4966.github.io/fashion_journal/"
+  "homepage": "https://leeseungmin4966.github.io/fashion_journal/",
+  "description": "memory_trip",
+  "main": "index.js",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leeseungmin4966/fashion_journal.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leeseungmin4966/fashion_journal/issues"
+  }
 }
